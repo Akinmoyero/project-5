@@ -1,3 +1,12 @@
+const readline = require("readline-sync");
+
+
+
+
+
+
+
+
 function calculateNetSalary(basicSalary, benefits) {
     const grossSalary = basicSalary + benefits;
 
@@ -46,23 +55,10 @@ function calculateNetSalary(basicSalary, benefits) {
     const deductions = paye + nhif + nssf;
     const netSalary = grossSalary - deductions;
 
-    return {
-        grossSalary: grossSalary,
-        paye: paye,
-        nhif: nhif,
-        nssf: nssf,
-        netSalary: netSalary,
-    };
+    console.log(`your net salary is ${netSalary}`);
 }
 
-// Example Usage
-const basicSalary = 50000; // Input basic salary
-const benefits = 10000;    // Input benefits
 
-const result = calculateNetSalary(basicSalary, benefits);
-
-console.log("Gross Salary:", result.grossSalary);
-console.log("PAYE:", result.paye);
-console.log("NHIF:", result.nhif);
-console.log("NSSF:", result.nssf);
-console.log("Net Salary:", result.netSalary);
+const basicSalary = parseFloat(readline.question("enter basic salary: ")); 
+const benefits = parseFloat(readline.question("enter benefits: ")); 
+const netSalary = calculateNetSalary(basicSalary, benefits);

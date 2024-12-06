@@ -1,8 +1,13 @@
 // A function to write student grade generator
-function gradeGenrator() {
-    let marks = prompt("Enter the student marks:");
 
-marks = parseInt(marks);
+// import readline 
+
+const readline = require("readline-sync");
+
+function gradeGenrator(marks) {
+    // let marks = prompt("Enter the student marks:");
+
+// marks = parseInt(marks);
 
 let grade ;
 
@@ -29,7 +34,5 @@ grade ="E"
 
 console.log(`your grade is ${grade}`);
 }
-    
-
-
-gradeGenrator()
+ const marks = parseFloat(readline.question("enter student marks: "));   
+const grade =gradeGenrator(marks);
